@@ -10,52 +10,66 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="http//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-	<nav>
+	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<div class="row">
-			<div class="logo"><img class="col-xs-3 img-responsive" src="images/logo.jpg" alt="GDA Awards Home"></div>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="how_to_enter.html">Awards</a></li>
-				<li><a href="sponsors.html">Sponsors</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
+			
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="glyphicon glyphicon-stop"></span>
+				<span class="glyphicon glyphicon-stop"></span>
+				<span class="glyphicon glyphicon-stop"></span>
+			  </button>
+			  <a class="col-xs-3 navbar-brand" href="index.html"><img class="img-responsive" src="images/logo.jpg" alt="GDA Awards Home"></a>
+			</div>
+    
+    
+			<!--<div class="logo"><img class="col-xs-3 img-responsive" src="images/logo.jpg" alt="GDA Awards Home"></div>-->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="how_to_enter.html">Awards</a></li>
+					<li><a href="sponsors.html">Sponsors</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
 			</div><!--closes row-->
 		</div><!--closes container-->
 	</nav>
 	<div class="container">
 		<div class="row">
 			
-			<article>
+			<article class="col-xs-12 clearfix">
 			<h1>SPONSORS</h1>
 			
 			<ul>
-				<li><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
-				<li><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
-				<li><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
-				<li><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
-				<li><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
-				<li><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
+				<li class="col-sm-4"><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
+				<li class="col-sm-4"><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
+				<li class="col-sm-4"><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
+				<li class="col-sm-4"><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
+				<li class="col-sm-4"><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
+				<li class="col-sm-4"><img class="img-responsive" src="images/thumb_temp.jpg" alt="#"></li>
 			</ul>			
 			
 
 			</article>
 			
-			<footer>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="how_to_enter.html">Awards</a></li>
-					<li><a href="sponsors.html">Sponsors</a></li>
-					<li><a href="contact.html">Contact</a></li>
+			<footer class="visible-xs">
+				<ul class="nav">
+					<li><a href="index.html">Home<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+					<li><a href="how_to_enter.html">Awards<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+					<li><a href="sponsors.html">Sponsors<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
+					<li><a href="contact.html">Contact<span class="pull-right glyphicon glyphicon-chevron-right"></span></a></li>
 				</ul>
-				
-				<p>Graphic Design Awards Ghana | Copyright 2014</p>
 			</footer>
+			<div class="copyright col-xs-offset-6 col-xs-6"><p>Graphic Design Awards Ghana | Copyright 2014</p></div>
 		</div><!--closes row-->
 	</div><!--closes container-->
 </body>
