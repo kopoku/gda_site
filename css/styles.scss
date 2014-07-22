@@ -5,9 +5,11 @@ src: url('../webfonts/2B7AD1_0_0.eot?#iefix') format('embedded-opentype'),url('.
 
 $headlines:'Novecentosanswide-Bold', helvetica, arial, sans-serif;
 $base-color: #58C3BB;
+$medium-shade: darken($base-color, 20%);
 $headline-size: 5em;
 $paragraph: helvetica, arial, sans-serif;
 $paragraph-size: 1em;
+$button-links: $paragraph-size - 0.1;
 
 @mixin fonts {
 font-family: $headlines;
@@ -25,14 +27,55 @@ body {
 
 article {
 	h1 { @include fonts;
+	text-align: center;
 	}
 	p { font-family: $paragraph;
 		font-size: $paragraph-size;
+		text-align: center;
+	}
+	
+	.award-cat {
+	margin-top: 30px;
+	font-size: $button-links;
+	font-family: $paragraph;
+	float: none;
+		a {
+		color: darken($base-color, 60%);
+		border: 1px solid #ffffff;
+		padding: 10px;
+		}
 	}
 }
 
 article {
 	.index & h1 span {
-	color: white;
+	color: #ffffff;
+	}
+}
+
+footer {
+float: left;
+width: 100%;
+margin-top: 30px;
+	li {
+	background-color: $medium-shade;
+	margin-bottom: 3px;
+	}
+	
+	a {
+	color: lighten($base-color, 40%);
+	text-transform: uppercase;
+		span {
+		color: $base-color;
+		}
+	}
+}
+
+.copyright {
+margin-top: 30px;
+font-size: $button-links - 0.1;
+color: lighten($base-color, 40%);
+	p {
+	text-align: right;
 	}
 }

@@ -7,10 +7,41 @@ body {
 
 article h1 {
   font-family: "Novecentosanswide-Bold", helvetica, arial, sans-serif;
-  font-size: 5em; }
+  font-size: 5em;
+  text-align: center; }
 article p {
   font-family: helvetica, arial, sans-serif;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  text-align: center; }
+article .award-cat {
+  margin-top: 30px;
+  font-size: 0.9em;
+  font-family: helvetica, arial, sans-serif;
+  float: none; }
+  article .award-cat a {
+    color: black;
+    border: 1px solid #ffffff;
+    padding: 10px; }
 
 .index article h1 span {
-  color: white; }
+  color: #ffffff; }
+
+footer {
+  float: left;
+  width: 100%;
+  margin-top: 30px; }
+  footer li {
+    background-color: #30857f;
+    margin-bottom: 3px; }
+  footer a {
+    color: #eef9f8;
+    text-transform: uppercase; }
+    footer a span {
+      color: #58c3bb; }
+
+.copyright {
+  margin-top: 30px;
+  font-size: 0.8em;
+  color: #eef9f8; }
+  .copyright p {
+    text-align: right; }
