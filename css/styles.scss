@@ -1,0 +1,39 @@
+@font-face {font-family: 'Novecentosanswide-Bold';
+src: url('../webfonts/2B7AD1_0_0.eot');
+src: url('../webfonts/2B7AD1_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2B7AD1_0_0.woff') format('woff'),url('webfonts/2B7AD1_0_0.ttf') format('truetype');}
+
+
+$headlines:'Novecentosanswide-Bold', helvetica, arial, sans-serif;
+$base-color: #58C3BB;
+$headline-size: 5em;
+$paragraph: helvetica, arial, sans-serif;
+$paragraph-size: 1em;
+
+@mixin fonts {
+font-family: $headlines;
+font-size: $headline-size;
+	@if $headline-size > 2em  {
+	$paragraph-size: 1.2em;
+	} @else {
+	$paragraph-size: 1em;
+	}
+}
+
+body {
+	background-color: $base-color;
+}
+
+article {
+	h1 { @include fonts;
+		text-align: center;
+	}
+	p { font-family: $paragraph;
+		font-size: $paragraph-size;
+	}
+}
+
+article {
+	.index & h1 span {
+	color: white;
+	}
+}

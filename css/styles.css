@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Novecentosanswide-Bold';
+  src: url("../webfonts/2B7AD1_0_0.eot");
+  src: url("../webfonts/2B7AD1_0_0.eot?#iefix") format("embedded-opentype"), url("../webfonts/2B7AD1_0_0.woff") format("woff"), url("webfonts/2B7AD1_0_0.ttf") format("truetype"); }
+body {
+  background-color: #58c3bb; }
+
+article h1 {
+  font-family: "Novecentosanswide-Bold", helvetica, arial, sans-serif;
+  font-size: 5em;
+  text-align: center; }
+article p {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1.2em; }
+
+.index article h1 span {
+  color: white; }
