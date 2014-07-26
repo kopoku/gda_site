@@ -6,10 +6,12 @@ src: url('../webfonts/2B7AD1_0_0.eot?#iefix') format('embedded-opentype'),url('.
 $headlines:'Novecentosanswide-Bold', helvetica, arial, sans-serif;
 $base-color: #58C3BB;
 $medium-shade: darken($base-color, 20%);
+$dark-shade: darken($medium-shade, 25%);
 $headline-size: 5em;
 $paragraph: helvetica, arial, sans-serif;
 $paragraph-size: 1em;
 $button-links: $paragraph-size - 0.1;
+$spacer: 15px;
 
 @mixin fonts {
 font-family: $headlines;
@@ -21,8 +23,17 @@ font-size: $headline-size;
 	}
 }
 
+@mixin titles ($width) {
+margin: $spacer + 10 auto;
+width: $width;
+font-size: $headline-size - 3;
+border-bottom: 8px solid $dark-shade;
+padding-bottom: 8px;
+}
+
 body {
 	background-color: $base-color;
+	color: $dark-shade;
 }
 
 article {
@@ -34,7 +45,7 @@ article {
 		text-align: center;
 	}
 	
-	.award-cat {
+	.button {
 	margin-top: 30px;
 	font-size: $button-links;
 	font-family: $paragraph;
@@ -43,39 +54,220 @@ article {
 		color: darken($base-color, 60%);
 		border: 1px solid #ffffff;
 		padding: 10px;
+			&:hover {
+			text-decoration: none;
+			color: #ffffff;
+			}
+		}
+	}
+	
+	.dropdown {
+		display: inline-block;
+		width: 100%;
+		margin: $spacer*1.5 0;
+		.btn-default {
+			background-image: none;
+			background-color: $base-color;
+			text-shadow: none;
+			border-color: $dark-shade;
+			box-shadow: none;
+			webkit-box-shadow: none;
+		}
+		
+	}
+	
+	.gallery {
+		padding: 0;
+		li {
+			list-style: none;
+			margin-bottom: $spacer;
+			padding: 0;
+		}
+	}
+	
+	
+	.index & h1 span {
+	color: #ffffff;
+	}
+	
+	.awards & {
+		h1 {
+		@include titles (35%);
+		}
+		
+		h2 {
+		text-align: center;
+		font-size: $paragraph-size;
+		width: 40%;
+		margin: $spacer + 15 auto $spacer + 5 auto;
+		}
+		
+		.awards-cat {
+			ul {
+			padding: 0;
+			}
+			
+			li {
+			width: 100%;
+			text-transform: uppercase;
+			font-size: $paragraph-size - 0.4;
+			list-style: none;
+			padding: 30px;
+			background-color: $medium-shade;
+			color: #ffffff;
+			margin-bottom: $spacer / 2;
+			}
+		}
+		
+		section {
+			p {
+			text-align: left;
+			}
+		}
+	}
+	
+	.sponsors & {
+		h1 {
+		@include titles (41%);
+		}
+		
+		ul {
+		padding: 0;
+			li {
+			list-style: none;
+			padding: 0;
+			margin-bottom: $spacer*1.5;
+			}
+		}
+	}
+	
+	.contact & {
+		h1 {
+		@include titles (38%);
+		}
+		
+		.address, .tel, .email {
+			p {
+			text-align: left;
+			font-size: $paragraph-size - 0.2;
+			}
+			
+			h2 {
+			font-size: $headline-size - 3.5;
+			}
+		}
+		
+		
+	}
+	
+	aside {
+		ul {
+		float: left;
+		width: 100%;
+		display: block;
+		padding: 0;
+		margin-bottom: 25px;
+			li {
+				list-style: none;
+				float: left;
+				width: 31.33%;
+				margin-right: 10px;
+					&:last-child {
+					margin-right: 0;
+					}
+				
+			}
+		}
+		
+		a {
+		text-transform: uppercase;
+		font-size: $button-links - 0.1;
+		text-align: center;
+		border: 1px solid #ffffff;
+		color: #ffffff;
+		padding: 15px;
+		display: block;
+		height: 100%;
+			&:hover {
+			text-decoration: none;
+			background: $dark-shade;
+			border: 0;
+			padding: 16px 15px;
+			color: #ffffff;
+			}
+			
+			&.active {
+			background: $dark-shade;
+			color: #ffffff;
+			border: 0;
+			padding: 16px 15px;
+			}
 		}
 	}
 }
 
-article {
-	.index & h1 span {
-	color: #ffffff;
-	}
-}
 
 footer {
 float: left;
 width: 100%;
-margin-top: 30px;
+margin-top: $spacer * 2;
 	li {
 	background-color: $medium-shade;
 	margin-bottom: 3px;
 	}
 	
 	a {
-	color: lighten($base-color, 40%);
+	color: $base-color;
 	text-transform: uppercase;
 		span {
 		color: $base-color;
 		}
+		&.active {
+		color: #ffffff;
+		}
+		&:hover {
+		color: $base-color;
+		}
 	}
+	
+	
 }
 
 .copyright {
-margin-top: 30px;
+margin-top: $spacer * 2;
 font-size: $button-links - 0.1;
 color: lighten($base-color, 40%);
 	p {
 	text-align: right;
+	}
+}
+
+nav {
+	li {
+	border-bottom: 1px solid $base-color;
+		a:hover {
+		background-color: $base-color !important;
+		color: #ffffff !important;
+		}
+		&:last-child {
+		border-bottom: none;
+		}
+		
+		a.active {
+		background-color: $base-color !important;
+		color: #ffffff !important;
+		}
+	}
+	
+	ul {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+	}
+	
+}
+
+button {
+	&:hover {
+	color: $base-color;
 	}
 }
