@@ -7,7 +7,7 @@ $headlines:'Novecentosanswide-Bold', helvetica, arial, sans-serif;
 $base-color: #58C3BB;
 $medium-shade: darken($base-color, 20%);
 $dark-shade: darken($medium-shade, 25%);
-$headline-size: 5em;
+$headline-size: 4.5em;
 $paragraph: helvetica, arial, sans-serif;
 $paragraph-size: 1em;
 $button-links: $paragraph-size - 0.1;
@@ -24,9 +24,10 @@ font-size: $headline-size;
 }
 
 @mixin titles ($width) {
+text-align: center;
 margin: $spacer + 10 auto;
 width: $width;
-font-size: $headline-size - 3;
+font-size: $headline-size - 2.8;
 border-bottom: 8px solid $dark-shade;
 padding-bottom: 8px;
 }
@@ -35,6 +36,8 @@ body {
 	background-color: $base-color;
 	color: $dark-shade;
 }
+
+
 
 article {
 	h1 { @include fonts;
@@ -51,6 +54,10 @@ article {
 	font-family: $paragraph;
 	float: none;
 		a {
+		display: block;
+		text-align: center;
+		width: 50%;
+		margin: 0 auto;
 		color: darken($base-color, 60%);
 		border: 1px solid #ffffff;
 		padding: 10px;
@@ -74,7 +81,27 @@ article {
 			webkit-box-shadow: none;
 		}
 		
+		
+		li {
+			border-bottom: 1px solid $base-color;
+				&:last-child {
+				border-bottom: none;
+				}
+				
+				a {
+				padding: 5px 20px;
+				} 
+		}
+		
+		
+		
 	}
+	
+	.open > .dropdown-toggle.btn-default {
+		background-color: $base-color;
+		border-color: $dark-shade;
+		}
+	
 	
 	.gallery {
 		padding: 0;
@@ -92,13 +119,13 @@ article {
 	
 	.awards & {
 		h1 {
-		@include titles (35%);
+		@include titles (41%);
 		}
 		
 		h2 {
 		text-align: center;
 		font-size: $paragraph-size;
-		width: 40%;
+		width: 60%;
 		margin: $spacer + 15 auto $spacer + 5 auto;
 		}
 		
@@ -128,7 +155,7 @@ article {
 	
 	.sponsors & {
 		h1 {
-		@include titles (41%);
+		@include titles (44%);
 		}
 		
 		ul {
@@ -143,7 +170,7 @@ article {
 	
 	.contact & {
 		h1 {
-		@include titles (38%);
+		@include titles (42%);
 		}
 		
 		.address, .tel, .email {
@@ -154,6 +181,11 @@ article {
 			
 			h2 {
 			font-size: $headline-size - 3.5;
+			}
+			
+			a {
+			color: $dark-shade;
+			text-decoration: none;
 			}
 		}
 		
@@ -171,28 +203,28 @@ article {
 				list-style: none;
 				float: left;
 				width: 31.33%;
-				margin-right: 10px;
+				margin-right: 3%;
 					&:last-child {
 					margin-right: 0;
 					}
-				
+					
+					
 			}
 		}
 		
 		a {
 		text-transform: uppercase;
-		font-size: $button-links - 0.1;
+		font-size: $button-links - 0.2;
 		text-align: center;
 		border: 1px solid #ffffff;
+		padding-top: 22px;
 		color: #ffffff;
-		padding: 15px;
 		display: block;
-		height: 100%;
+		height: 60px;
 			&:hover {
 			text-decoration: none;
 			background: $dark-shade;
 			border: 0;
-			padding: 16px 15px;
 			color: #ffffff;
 			}
 			
@@ -200,7 +232,6 @@ article {
 			background: $dark-shade;
 			color: #ffffff;
 			border: 0;
-			padding: 16px 15px;
 			}
 		}
 	}

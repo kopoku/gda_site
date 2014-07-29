@@ -8,7 +8,7 @@ body {
 
 article h1 {
   font-family: "Novecentosanswide-Bold", helvetica, arial, sans-serif;
-  font-size: 5em;
+  font-size: 4.5em;
   text-align: center; }
 article p {
   font-family: helvetica, arial, sans-serif;
@@ -20,6 +20,10 @@ article .button {
   font-family: helvetica, arial, sans-serif;
   float: none; }
   article .button a {
+    display: block;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
     color: black;
     border: 1px solid #ffffff;
     padding: 10px; }
@@ -37,6 +41,15 @@ article .dropdown {
     border-color: #0e2725;
     box-shadow: none;
     webkit-box-shadow: none; }
+  article .dropdown li {
+    border-bottom: 1px solid #58c3bb; }
+    article .dropdown li:last-child {
+      border-bottom: none; }
+    article .dropdown li a {
+      padding: 5px 20px; }
+article .open > .dropdown-toggle.btn-default {
+  background-color: #58c3bb;
+  border-color: #0e2725; }
 article .gallery {
   padding: 0; }
   article .gallery li {
@@ -46,15 +59,16 @@ article .gallery {
 .index article h1 span {
   color: #ffffff; }
 .awards article h1 {
+  text-align: center;
   margin: 25px auto;
-  width: 35%;
-  font-size: 2em;
+  width: 41%;
+  font-size: 1.7em;
   border-bottom: 8px solid #0e2725;
   padding-bottom: 8px; }
 .awards article h2 {
   text-align: center;
   font-size: 1.2em;
-  width: 40%;
+  width: 60%;
   margin: 30px auto 20px auto; }
 .awards article .awards-cat ul {
   padding: 0; }
@@ -70,9 +84,10 @@ article .gallery {
 .awards article section p {
   text-align: left; }
 .sponsors article h1 {
+  text-align: center;
   margin: 25px auto;
-  width: 41%;
-  font-size: 2em;
+  width: 44%;
+  font-size: 1.7em;
   border-bottom: 8px solid #0e2725;
   padding-bottom: 8px; }
 .sponsors article ul {
@@ -82,16 +97,20 @@ article .gallery {
     padding: 0;
     margin-bottom: 22.5px; }
 .contact article h1 {
+  text-align: center;
   margin: 25px auto;
-  width: 38%;
-  font-size: 2em;
+  width: 42%;
+  font-size: 1.7em;
   border-bottom: 8px solid #0e2725;
   padding-bottom: 8px; }
 .contact article .address p, .contact article .tel p, .contact article .email p {
   text-align: left;
   font-size: 1em; }
 .contact article .address h2, .contact article .tel h2, .contact article .email h2 {
-  font-size: 1.5em; }
+  font-size: 1em; }
+.contact article .address a, .contact article .tel a, .contact article .email a {
+  color: #0e2725;
+  text-decoration: none; }
 article aside ul {
   float: left;
   width: 100%;
@@ -102,29 +121,27 @@ article aside ul {
     list-style: none;
     float: left;
     width: 31.33%;
-    margin-right: 10px; }
+    margin-right: 3%; }
     article aside ul li:last-child {
       margin-right: 0; }
 article aside a {
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.7em;
   text-align: center;
   border: 1px solid #ffffff;
+  padding-top: 22px;
   color: #ffffff;
-  padding: 15px;
   display: block;
-  height: 100%; }
+  height: 60px; }
   article aside a:hover {
     text-decoration: none;
     background: #0e2725;
     border: 0;
-    padding: 16px 15px;
     color: #ffffff; }
   article aside a.active {
     background: #0e2725;
     color: #ffffff;
-    border: 0;
-    padding: 16px 15px; }
+    border: 0; }
 
 footer {
   float: left;
