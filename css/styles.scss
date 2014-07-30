@@ -1,3 +1,6 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
 @font-face {font-family: 'Novecentosanswide-Bold';
 src: url('../webfonts/2B7AD1_0_0.eot');
 src: url('../webfonts/2B7AD1_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2B7AD1_0_0.woff') format('woff'),url('webfonts/2B7AD1_0_0.ttf') format('truetype');}
@@ -5,6 +8,7 @@ src: url('../webfonts/2B7AD1_0_0.eot?#iefix') format('embedded-opentype'),url('.
 
 $headlines:'Novecentosanswide-Bold', helvetica, arial, sans-serif;
 $base-color: #58C3BB;
+$secondary-color: #E79911;
 $medium-shade: darken($base-color, 20%);
 $dark-shade: darken($medium-shade, 25%);
 $headline-size: 4.5em;
@@ -13,10 +17,10 @@ $paragraph-size: 1em;
 $button-links: $paragraph-size - 0.1;
 $spacer: 15px;
 
-@mixin fonts {
+@mixin fonts ($font-size) {
 font-family: $headlines;
-font-size: $headline-size;
-	@if $headline-size > 2em  {
+font-size: $font-size;
+	@if $font-size > 2em  {
 	$paragraph-size: 1.2em;
 	} @else {
 	$paragraph-size: 1em;
@@ -35,13 +39,18 @@ padding-bottom: 8px;
 body {
 	background-color: $base-color;
 	color: $dark-shade;
+	padding-bottom: $spacer;	
 }
 
 
 
+
 article {
-	h1 { @include fonts;
+	h1 { @include fonts ($headline-size);
 	text-align: center;
+		@media (min-width: $screen-sm-min) {
+		@include fonts ($headline-size * 1.5);	
+		}
 	}
 	p { font-family: $paragraph;
 		font-size: $paragraph-size;
@@ -67,11 +76,13 @@ article {
 			}
 		}
 	}
+
 	
 	.dropdown {
 		display: inline-block;
 		width: 100%;
 		margin: $spacer*1.5 0;
+				
 		.btn-default {
 			background-image: none;
 			background-color: $base-color;
@@ -82,16 +93,28 @@ article {
 		}
 		
 		
-		li {
-			border-bottom: 1px solid $base-color;
-				&:last-child {
-				border-bottom: none;
-				}
+		ul {
+			
+			width: 100%;
+			li {
+				border-bottom: 1px solid $base-color;
+					&:last-child {
+					border-bottom: none;
+					}
 				
-				a {
-				padding: 5px 20px;
-				} 
+					a {
+					padding: 5px 20px;
+					} 
+			}
+			
+			@media (min-width: $screen-sm-min) {
+				width: 80%;
+				margin-left: 10%;
+				
+			}
 		}
+		
+		
 		
 		
 		
@@ -105,11 +128,10 @@ article {
 	
 	.gallery {
 		padding: 0;
-		li {
-			list-style: none;
-			margin-bottom: $spacer;
-			padding: 0;
+		.thumb {
+			margin-bottom: $spacer*2;	
 		}
+		
 	}
 	
 	
@@ -120,6 +142,9 @@ article {
 	.awards & {
 		h1 {
 		@include titles (41%);
+			@media (min-width: $screen-sm-min) {
+				@include titles (16%);
+			}
 		}
 		
 		h2 {
@@ -147,30 +172,56 @@ article {
 		}
 		
 		section {
+			float: left;
+			margin-bottom: $spacer*1.5;
+			
 			p {
 			text-align: left;
 			}
+			
+			@media (min-width: $screen-sm-min) {
+				margin-bottom: $spacer*3;
+				h3 {
+				margin-top: 0;
+				}
+			}
+		}
+		
+		.judges {
+			@media (min-width: $screen-sm-min) {
+			margin-top: $spacer*5;
+			}
+		
 		}
 	}
 	
 	.sponsors & {
 		h1 {
 		@include titles (44%);
-		}
-		
-		ul {
-		padding: 0;
-			li {
-			list-style: none;
-			padding: 0;
-			margin-bottom: $spacer*1.5;
+			@media (min-width: $screen-sm-min) {
+				@include titles (20%);
 			}
 		}
+		
+		
+		.sponsor-logo {			
+		margin-bottom: $spacer*1.5;
+		}
+		
 	}
 	
 	.contact & {
 		h1 {
 		@include titles (42%);
+			@media (min-width: $screen-sm-min) {
+				@include titles (20%);
+			}
+		}
+		
+		@media (min-width: $screen-sm-min) {
+			p {
+			text-align: left;
+			}
 		}
 		
 		.address, .tel, .email {
@@ -268,31 +319,53 @@ margin-top: $spacer * 2;
 margin-top: $spacer * 2;
 font-size: $button-links - 0.1;
 color: lighten($base-color, 40%);
+
 	p {
 	text-align: right;
 	}
+	
+@media (min-width: $screen-sm-min) {
+	margin-top: $spacer * 7;
+	p {
+	text-align: center;
+	}
+}
+
 }
 
 nav {
 	li {
 	border-bottom: 1px solid $base-color;
-		a:hover {
+		a:hover, a.active {
 		background-color: $base-color !important;
 		color: #ffffff !important;
+			@media (min-width: $screen-sm-min) {
+			background-color: transparent !important;
+			color: $secondary-color !important;
+			}
 		}
 		&:last-child {
 		border-bottom: none;
 		}
 		
-		a.active {
-		background-color: $base-color !important;
-		color: #ffffff !important;
+		@media (min-width: $screen-sm-min) {
+			border-bottom: none;
 		}
 	}
 	
 	ul {
 	margin-bottom: 0 !important;
 	margin-top: 0 !important;
+		@media (min-width: $screen-sm-min) {
+			float: right !important;
+		}
+	}
+	
+	
+	@media (min-width: $screen-sm-min) {
+		.navbar-collapse.collapse {
+		height: 110px !important;
+		}
 	}
 	
 }
