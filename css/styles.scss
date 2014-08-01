@@ -55,7 +55,15 @@ article {
 	p { font-family: $paragraph;
 		font-size: $paragraph-size;
 		text-align: center;
-			
+		
+			@media (min-width: $screen-md-min) { 
+				line-height: $paragraph-size * 1.3;
+				text-align: left;
+				
+				.index & {
+				text-align: center;
+				}
+			}			
 	}
 	
 	.button {
@@ -75,14 +83,22 @@ article {
 			text-decoration: none;
 			color: #ffffff;
 			}
+			
+			@media (min-width: $screen-md-min) { 
+				width: 20%;
+			}
 		}
 	}
 
 	
 	.dropdown {
 		display: inline-block;
-		width: 100%;
-		margin: $spacer*1.5 0;
+		margin-top: $spacer*1.5;
+		margin-bottom: $spacer*1.5;
+		
+			@media (min-width: $screen-sm-min) {
+			
+			}
 				
 		.btn-default {
 			background-image: none;
@@ -146,6 +162,12 @@ article {
 			@media (min-width: $screen-sm-min) {
 				@include titles (16%);
 			}
+			
+			@media (min-width: $screen-md-min) {
+			text-align: left;
+			margin: $spacer*1.5 0;
+			border-bottom: none;
+			}	
 		}
 		
 		h2 {
@@ -153,9 +175,16 @@ article {
 		font-size: $paragraph-size;
 		width: 60%;
 		margin: $spacer + 15 auto $spacer + 5 auto;
+		
+			@media (min-width: $screen-md-min) {
+				text-align: left;
+				margin-left: 0;
+				margin-top: 0;
+			}
 		}
 		
 		.awards-cat {
+			width: 100%;
 			ul {
 			padding: 0;
 			}
@@ -170,30 +199,43 @@ article {
 			color: #ffffff;
 			margin-bottom: $spacer / 2;
 			}
-		}
-		
-		section {
-			float: left;
-			margin-bottom: $spacer*1.5;
-			
-			p {
-			text-align: left;
-			}
-			
-			@media (min-width: $screen-sm-min) {
-				margin-bottom: $spacer*3;
-				h3 {
-				margin-top: 0;
-				}
-			}
+
 		}
 		
 		.judges {
+			
+			section {
+				float: left;
+				margin-bottom: $spacer*1.5;
+			
+				p {
+				text-align: left;
+					@media (min-width: $screen-sm-min) {
+					font-size: $paragraph-size - 0.1;
+					}
+				}
+			
+				@media (min-width: $screen-sm-min) {
+					margin-bottom: $spacer*3;
+					h3 {
+					margin-top: 0;
+					}
+				}
+			}
+		
 			@media (min-width: $screen-sm-min) {
 			margin-top: $spacer*5;
 			}
+			
+			@media (min-width: $screen-md-min) {
+			margin-top: 0;
+			}
 		
 		}
+		
+		
+		
+		
 	}
 	
 	.sponsors & {
@@ -201,6 +243,10 @@ article {
 		@include titles (44%);
 			@media (min-width: $screen-sm-min) {
 				@include titles (20%);
+			}
+			
+			@media (min-width: $screen-md-min) {
+				border-bottom: none; 
 			}
 		}
 		
@@ -216,6 +262,10 @@ article {
 		@include titles (42%);
 			@media (min-width: $screen-sm-min) {
 				@include titles (20%);
+			}
+			
+			@media (min-width: $screen-md-min) {
+				border-bottom: none; 
 			}
 		}
 		
@@ -259,7 +309,11 @@ article {
 					&:last-child {
 					margin-right: 0;
 					}
-					
+				@media (min-width: $screen-md-min) { 
+					clear: both;
+					width: 100%;
+					margin-bottom: $spacer;
+				}
 					
 			}
 		}
@@ -323,14 +377,19 @@ color: lighten($base-color, 40%);
 
 	p {
 	text-align: right;
+		@media (min-width: $screen-sm-min) {
+			text-align: center;
+		}
+		
+		@media (min-width: $screen-md-min) {
+			text-align: right;
+		}
 	}
 	
 @media (min-width: $screen-sm-min) {
 	margin-top: $spacer * 7;
-	p {
-	text-align: center;
-	}
 }
+
 
 }
 
@@ -360,6 +419,11 @@ nav {
 		@media (min-width: $screen-sm-min) {
 			float: right !important;
 		}
+		
+		@media (min-width: $screen-lg-min) {
+		margin-top: 4% !important;
+		}
+		
 	}
 	
 	
@@ -368,6 +432,8 @@ nav {
 		height: 110px !important;
 		}
 	}
+	
+
 	
 }
 
