@@ -5,7 +5,7 @@
 body {
   background-color: #58c3bb;
   color: #0e2725;
-  padding-bottom: 15px; }
+  padding-bottom: 30px; }
 
 article h1 {
   font-family: "Novecentosanswide-Bold", helvetica, arial, sans-serif;
@@ -48,6 +48,10 @@ article .dropdown {
   display: inline-block;
   margin-top: 22.5px;
   margin-bottom: 22.5px; }
+  @media (min-width: 992px) {
+    article .dropdown {
+      padding-left: 30px;
+      padding-right: 30px; } }
   article .dropdown .btn-default {
     background-image: none;
     background-color: #58c3bb;
@@ -74,6 +78,10 @@ article .gallery {
   padding: 0; }
   article .gallery .thumb {
     margin-bottom: 30px; }
+  @media (min-width: 992px) {
+    article .gallery {
+      padding-left: 15px;
+      padding-right: 15px; } }
 .index article h1 span {
   color: #ffffff; }
 .awards article h1 {
@@ -106,19 +114,21 @@ article .gallery {
       text-align: left;
       margin-left: 0;
       margin-top: 0; } }
-.awards article .awards-cat {
-  width: 100%; }
-  .awards article .awards-cat ul {
-    padding: 0; }
-  .awards article .awards-cat li {
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    list-style: none;
-    padding: 30px;
-    background-color: #30857f;
-    color: #ffffff;
-    margin-bottom: 7.5px; }
+.awards article .awards-cat ul {
+  padding: 0; }
+.awards article .awards-cat li {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  list-style: none;
+  padding: 30px;
+  background-color: #30857f;
+  color: #ffffff;
+  margin-bottom: 7.5px; }
+@media (min-width: 992px) {
+  .awards article .awards-cat {
+    padding-left: 30px;
+    padding-right: 30px; } }
 .awards article .judges section {
   float: left;
   margin-bottom: 22.5px; }
@@ -138,6 +148,35 @@ article .gallery {
 @media (min-width: 992px) {
   .awards article .judges {
     margin-top: 0; } }
+.about article h1 {
+  text-align: center;
+  margin: 25px auto;
+  width: 37%;
+  font-size: 1.7em;
+  border-bottom: 8px solid #0e2725;
+  padding-bottom: 8px; }
+  @media (min-width: 768px) {
+    .about article h1 {
+      text-align: center;
+      margin: 25px auto;
+      width: 15%;
+      font-size: 1.7em;
+      border-bottom: 8px solid #0e2725;
+      padding-bottom: 8px; } }
+  @media (min-width: 992px) {
+    .about article h1 {
+      border-bottom: none;
+      text-align: left;
+      margin-left: 0; } }
+.about article p {
+  text-align: left; }
+.about article h3 {
+  font-size: 1.3em; }
+.about article ul {
+  padding-left: 15px;
+  font-size: 1.1em; }
+.about article hr {
+  border-top: 1px solid #0e2725; }
 .sponsors article h1 {
   text-align: center;
   margin: 25px auto;
@@ -175,7 +214,9 @@ article .gallery {
       padding-bottom: 8px; } }
   @media (min-width: 992px) {
     .contact article h1 {
-      border-bottom: none; } }
+      border-bottom: none;
+      text-align: left;
+      margin: 22.5px 0; } }
 @media (min-width: 768px) {
   .contact article p {
     text-align: left; } }
@@ -242,6 +283,7 @@ footer {
       color: #58c3bb; }
 
 .copyright {
+  display: none;
   margin-top: 30px;
   font-size: 0.8em;
   color: #eef9f8; }
@@ -257,6 +299,14 @@ footer {
     .copyright {
       margin-top: 105px; } }
 
+nav .navbar-brand {
+  height: auto; }
+  @media (min-width: 768px) {
+    nav .navbar-brand {
+      height: 50px; } }
+  @media (min-width: 992px) {
+    nav .navbar-brand {
+      height: 20px; } }
 nav li {
   border-bottom: 1px solid #58c3bb; }
   nav li a:hover, nav li a.active {
@@ -276,13 +326,11 @@ nav ul {
   margin-top: 0 !important; }
   @media (min-width: 768px) {
     nav ul {
-      float: right !important; } }
+      float: right !important;
+      margin-top: 2% !important; } }
   @media (min-width: 1200px) {
     nav ul {
-      margin-top: 4% !important; } }
-@media (min-width: 768px) {
-  nav .navbar-collapse.collapse {
-    height: 110px !important; } }
+      margin-top: 2% !important; } }
 
 button:hover {
   color: #58c3bb; }

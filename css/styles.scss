@@ -39,7 +39,7 @@ padding-bottom: 8px;
 body {
 	background-color: $base-color;
 	color: $dark-shade;
-	padding-bottom: $spacer;	
+	padding-bottom: $spacer*2;	
 }
 
 
@@ -96,8 +96,9 @@ article {
 		margin-top: $spacer*1.5;
 		margin-bottom: $spacer*1.5;
 		
-			@media (min-width: $screen-sm-min) {
-			
+			@media (min-width: $screen-md-min) {
+			padding-left: 30px;
+			padding-right: 30px;
 			}
 				
 		.btn-default {
@@ -149,6 +150,12 @@ article {
 			margin-bottom: $spacer*2;	
 		}
 		
+		@media (min-width: $screen-md-min) {
+		padding-left: 15px;
+		padding-right: 15px;
+		}
+
+		
 	}
 	
 	
@@ -184,7 +191,7 @@ article {
 		}
 		
 		.awards-cat {
-			width: 100%;
+			
 			ul {
 			padding: 0;
 			}
@@ -198,6 +205,11 @@ article {
 			background-color: $medium-shade;
 			color: #ffffff;
 			margin-bottom: $spacer / 2;
+			}
+			
+			@media (min-width: $screen-md-min) {
+			padding-left: 30px;
+			padding-right: 30px;
 			}
 
 		}
@@ -238,6 +250,40 @@ article {
 		
 	}
 	
+	.about & {
+		h1 {
+		@include titles (37%);
+			@media (min-width: $screen-sm-min) {
+				@include titles (15%);
+			}
+			
+			@media (min-width: $screen-md-min) {
+				border-bottom: none; 
+				text-align: left;
+				margin-left: 0;
+			}
+		}
+		
+		p {
+		text-align: left;
+		}
+		
+		h3 {
+			font-size: $headline-size - 3.2;	
+		}
+		
+		ul {
+		padding-left: 15px;
+		font-size: $paragraph-size - 0.1;
+		}
+		
+		hr {
+		border-top: 1px solid $dark-shade;
+		}
+	}
+	
+	
+	
 	.sponsors & {
 		h1 {
 		@include titles (44%);
@@ -265,7 +311,9 @@ article {
 			}
 			
 			@media (min-width: $screen-md-min) {
-				border-bottom: none; 
+				border-bottom: none;
+				text-align: left;
+				margin: $spacer*1.5 0;
 			}
 		}
 		
@@ -371,6 +419,7 @@ margin-top: $spacer * 2;
 }
 
 .copyright {
+display: none;
 margin-top: $spacer * 2;
 font-size: $button-links - 0.1;
 color: lighten($base-color, 40%);
@@ -394,6 +443,18 @@ color: lighten($base-color, 40%);
 }
 
 nav {
+
+	.navbar-brand {
+	height: auto;
+		@media (min-width: $screen-sm-min) {
+			height: 50px;
+		}
+		
+		@media (min-width: $screen-md-min) {
+			height: 20px;
+		}
+	}
+	
 	li {
 	border-bottom: 1px solid $base-color;
 		a:hover, a.active {
@@ -418,21 +479,17 @@ nav {
 	margin-top: 0 !important;
 		@media (min-width: $screen-sm-min) {
 			float: right !important;
+			margin-top: 2% !important;
 		}
 		
 		@media (min-width: $screen-lg-min) {
-		margin-top: 4% !important;
+		margin-top: 2% !important;
 		}
 		
 	}
 	
 	
-	@media (min-width: $screen-sm-min) {
-		.navbar-collapse.collapse {
-		height: 110px !important;
-		}
-	}
-	
+
 
 	
 }
