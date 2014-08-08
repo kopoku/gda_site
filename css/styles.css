@@ -5,7 +5,21 @@
 body {
   background-color: #58c3bb;
   color: #0e2725;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  background-image: url("../images/design_pattern_1.png");
+  /*background-position: bottom;*/ }
+
+.design_pattern {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.2;
+  max-width: 100%; }
+
+.banner {
+  background-color: black;
+  position: relative; }
 
 article h1 {
   font-family: "Novecentosanswide-Bold", helvetica, arial, sans-serif;
@@ -82,8 +96,36 @@ article .gallery {
     article .gallery {
       padding-left: 15px;
       padding-right: 15px; } }
-.index article h1 span {
-  color: #ffffff; }
+.index article h1 {
+  width: 80%;
+  margin: 50px auto 20px auto;
+  font-size: 2em;
+  color: #000000; }
+.index article section {
+  margin-top: 50px;
+  float: left; }
+  .index article section h2 {
+    text-align: center;
+    margin: 25px auto;
+    width: 44%;
+    font-size: 1.7em;
+    border-bottom: 8px solid #0e2725;
+    padding-bottom: 8px; }
+    @media (min-width: 768px) {
+      .index article section h2 {
+        text-align: center;
+        margin: 25px auto;
+        width: 20%;
+        font-size: 1.7em;
+        border-bottom: 8px solid #0e2725;
+        padding-bottom: 8px; } }
+    @media (min-width: 992px) {
+      .index article section h2 {
+        border-bottom: none; } }
+  .index article section .sponsor-logo {
+    margin-bottom: 22.5px; }
+    .index article section .sponsor-logo img {
+      width: 100%; }
 .awards article h1 {
   text-align: center;
   margin: 25px auto;
@@ -220,14 +262,16 @@ article .gallery {
 @media (min-width: 768px) {
   .contact article p {
     text-align: left; } }
-.contact article .address p, .contact article .tel p, .contact article .email p {
+.contact article .address p, .contact article .tel p, .contact article .email p, .contact article .social p {
   text-align: left;
   font-size: 1em; }
-.contact article .address h2, .contact article .tel h2, .contact article .email h2 {
+.contact article .address h2, .contact article .tel h2, .contact article .email h2, .contact article .social h2 {
   font-size: 1em; }
-.contact article .address a, .contact article .tel a, .contact article .email a {
+.contact article .address a, .contact article .tel a, .contact article .email a, .contact article .social a {
   color: #0e2725;
   text-decoration: none; }
+.contact article .address img, .contact article .tel img, .contact article .email img, .contact article .social img {
+  padding: 0; }
 article aside ul {
   float: left;
   width: 100%;
@@ -299,38 +343,40 @@ footer {
     .copyright {
       margin-top: 105px; } }
 
-nav .navbar-brand {
-  height: auto; }
-  @media (min-width: 768px) {
-    nav .navbar-brand {
-      height: 50px; } }
-  @media (min-width: 992px) {
-    nav .navbar-brand {
-      height: 20px; } }
-nav li {
-  border-bottom: 1px solid #58c3bb; }
-  nav li a:hover, nav li a.active {
-    background-color: #58c3bb !important;
-    color: #ffffff !important; }
+nav {
+  margin-bottom: 0 !important; }
+  nav .navbar-brand {
+    height: auto; }
     @media (min-width: 768px) {
-      nav li a:hover, nav li a.active {
-        background-color: transparent !important;
-        color: #e79911 !important; } }
-  nav li:last-child {
-    border-bottom: none; }
-  @media (min-width: 768px) {
-    nav li {
-      border-bottom: none; } }
-nav ul {
-  margin-bottom: 0 !important;
-  margin-top: 0 !important; }
-  @media (min-width: 768px) {
-    nav ul {
-      float: right !important;
-      margin-top: 2% !important; } }
-  @media (min-width: 1200px) {
-    nav ul {
-      margin-top: 2% !important; } }
+      nav .navbar-brand {
+        height: 50px; } }
+    @media (min-width: 992px) {
+      nav .navbar-brand {
+        height: 20px; } }
+  nav li {
+    border-bottom: 1px solid #58c3bb; }
+    nav li a:hover, nav li a.active {
+      background-color: #58c3bb !important;
+      color: #ffffff !important; }
+      @media (min-width: 768px) {
+        nav li a:hover, nav li a.active {
+          background-color: transparent !important;
+          color: #e79911 !important; } }
+    nav li:last-child {
+      border-bottom: none; }
+    @media (min-width: 768px) {
+      nav li {
+        border-bottom: none; } }
+  nav ul {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important; }
+    @media (min-width: 768px) {
+      nav ul {
+        float: right !important;
+        margin-top: 2% !important; } }
+    @media (min-width: 1200px) {
+      nav ul {
+        margin-top: 2% !important; } }
 
 button:hover {
   color: #58c3bb; }

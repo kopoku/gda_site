@@ -39,7 +39,28 @@ padding-bottom: 8px;
 body {
 	background-color: $base-color;
 	color: $dark-shade;
-	padding-bottom: $spacer*2;	
+	padding-bottom: $spacer*2;
+	background-image: url('../images/design_pattern_1.png');
+	
+	/*background-position: bottom;*/
+	
+}
+
+
+.design_pattern {
+display: none;
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	opacity: 0.2;
+	max-width: 100%;
+}
+
+.banner {
+	
+	background-color: black;
+	position: relative;
+
 }
 
 
@@ -159,8 +180,47 @@ article {
 	}
 	
 	
-	.index & h1 span {
-	color: #ffffff;
+	.index &  {
+	
+		
+		
+		h1 {
+		width: 80%;
+		margin: 50px auto 20px auto;
+		font-size: 2em;
+		color: #000000;
+		}
+		
+		section {
+		
+			margin-top: 50px;
+			float: left;
+		
+			h2 {
+			@include titles (44%);
+				@media (min-width: $screen-sm-min) {
+					@include titles (20%);
+				}
+			
+				@media (min-width: $screen-md-min) {
+					border-bottom: none; 
+				}
+			}
+		
+		
+			.sponsor-logo {			
+			margin-bottom: $spacer*1.5;
+				img {
+					width: 100%;
+				
+				}
+		
+			}
+		
+		}
+		
+		
+	
 	}
 	
 	.awards & {
@@ -323,7 +383,7 @@ article {
 			}
 		}
 		
-		.address, .tel, .email {
+		.address, .tel, .email, .social {
 			p {
 			text-align: left;
 			font-size: $paragraph-size - 0.2;
@@ -336,6 +396,10 @@ article {
 			a {
 			color: $dark-shade;
 			text-decoration: none;
+			}
+			
+			img {
+			padding: 0;
 			}
 		}
 		
@@ -443,6 +507,9 @@ color: lighten($base-color, 40%);
 }
 
 nav {
+
+	margin-bottom: 0 !important;
+	
 
 	.navbar-brand {
 	height: auto;
